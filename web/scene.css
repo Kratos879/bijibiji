@@ -1,0 +1,25 @@
+@media screen {
+.scene{overflow:hidden;background:radial-gradient(ellipse at 72% 20%,#253985 0,transparent 42%),radial-gradient(ellipse at 5% 65%,#213c54 0,transparent 45%),#080e20}
+.scene-image,.scene-shade{display:none}
+.scene::before{content:'';position:absolute;inset:0;background:linear-gradient(115deg,transparent 40%,#688aff15 50%,transparent 64%),radial-gradient(ellipse at 74% 30%,#a463ef32,transparent 35%)}
+.scene::after{content:'';position:absolute;inset:0;background-image:linear-gradient(#9cbeff09 1px,transparent 1px),linear-gradient(90deg,#9cbeff09 1px,transparent 1px);background-size:80px 80px;mask-image:linear-gradient(transparent,#000);transform:perspective(650px) rotateX(48deg) scale(1.8);transform-origin:center bottom}
+.scene-orbit{position:absolute;width:950px;height:950px;right:-130px;top:-430px;border:1px solid #a7c9ff27;border-radius:50%;box-shadow:0 0 0 70px #88aaff06,0 0 0 140px #88aaff07,0 0 90px #687fff12;transform:rotate(-25deg) scaleY(.64)}
+.head-position{position:absolute;right:8%;top:85px;width:340px;height:320px;perspective:850px;z-index:1}
+.head-motion{width:100%;height:100%;transform-origin:50% 78%;will-change:transform;filter:drop-shadow(0 16px 30px #688dff50)}
+.head-window{position:relative;width:100%;height:100%;overflow:hidden;mask-image:radial-gradient(ellipse 49% 49% at 50% 48%,black 55%,transparent 100%);background:radial-gradient(ellipse,#788de55c,transparent 70%)}
+.head-window video{position:absolute;width:1250px;height:703px;max-width:none;left:-690px;top:-155px;object-fit:fill;filter:grayscale(.75) sepia(.2) hue-rotate(175deg) saturate(1.6);opacity:0;transition:opacity .7s}
+.head-window video.ready{opacity:.88}
+.head-fallback{position:absolute;inset:40px 55px 70px;border-radius:30px;background:linear-gradient(145deg,#c1ceeb,#4d6388 45%,#b7c4e2);padding:20px;box-shadow:inset 0 0 0 2px #e4eeff66,10px 16px 30px #04091b80}
+.head-fallback::before{content:'';display:block;height:100%;border-radius:20px;background:radial-gradient(ellipse at 30% 43%,#bdedff 0 8%,transparent 10%),radial-gradient(ellipse at 70% 43%,#bdedff 0 8%,transparent 10%),linear-gradient(#111d39,#22374d);box-shadow:inset 0 0 18px #000}
+.head-window.loaded .head-fallback{display:none}
+.app-shell{position:relative;z-index:2}
+.topbar{border-bottom-color:#b8cdff26}.topbar .brand,.topbar .brand-en{color:#edf2ff}
+.workspace{padding-top:205px!important}
+.glass,.input-panel,.note-panel,.history-card,.history-empty{background:linear-gradient(130deg,#ffffff12,transparent 65%),rgba(var(--panel-rgb),calc(var(--panel-opacity) * .87));backdrop-filter:blur(32px) saturate(125%);-webkit-backdrop-filter:blur(32px) saturate(125%);border:1px solid #bed0ff40;box-shadow:0 24px 80px #00000025,inset 0 1px #ffffff25}
+.history-heading,.history-heading>span,.page-footer{color:#d3ddf5}
+.topbar nav,.model-menu summary,.settings-button{backdrop-filter:blur(20px)}
+@media(max-width:760px){.head-position{right:calc(50% - 170px);top:83px;transform:scale(.78)}.workspace{padding-top:200px!important}.scene-orbit{right:-550px}.topbar .model-menu summary{background:var(--soft);border-radius:20px;padding:8px}.glass{backdrop-filter:blur(18px)}}
+@media(prefers-reduced-motion:reduce){.head-motion{transform:none!important}.head-window video{transition:none}}
+}
+@media screen{.topbar .model-menu summary{color:#e0e9ff;background:#25335699;border:1px solid #a9c0ff25;border-radius:24px;padding:9px 13px}.head-fallback{transform:perspective(700px) rotateY(var(--head-look,0deg));transition:transform .15s ease}.head-position{top:58px}}
+@media screen and (prefers-reduced-motion:no-preference){.scene[data-busy=true] .head-motion{animation:head-working 2.6s ease-in-out infinite}@keyframes head-working{0%,60%,100%{transform:translateY(0) rotateX(0)}30%{transform:translateY(9px) rotateX(-13deg)}}}

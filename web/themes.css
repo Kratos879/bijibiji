@@ -1,0 +1,92 @@
+/* All screen surfaces share the same theme tokens; print keeps a white page. */
+@media screen {
+html.theme-changing *{transition:none!important}
+html{background:var(--page);color:var(--ink)}
+body{color:var(--ink)}
+.brand,.brand-en,.history-heading,.history-heading>span,.page-footer,.section-next,.model-menu summary{color:var(--page-ink)}
+.model-menu .model-popover{color:var(--ink)}
+.scene{background:var(--page)}
+.scene-image{background:radial-gradient(ellipse at 15% 5%,var(--accent),transparent 60%),radial-gradient(ellipse at 95% 95%,var(--accent),transparent 55%);opacity:var(--glow-opacity);filter:none}
+.scene-shade{background:none}
+.glass,.input-panel,.note-panel,.history-card,.history-empty{background:rgba(var(--panel-rgb),var(--panel-opacity));border-color:var(--line);box-shadow:0 18px 55px -28px #14223535,inset 0 1px #ffffff28;backdrop-filter:blur(28px)}
+.note-panel{height:750px}
+.topbar nav,.settings-button,.template-card,.empty-document,.question-card,.secondary-button,.note-actions button,.export-option,.provider-section,.prose blockquote,.prose th,.answer-panel .evidence{background:var(--soft);border-color:var(--line);box-shadow:none}
+.topbar nav a.nav-active,.template-card.selected,#templateList button.selected,.mastery-controls button.active,.reveal-button{background:color-mix(in srgb,var(--accent) 12%,var(--solid));border-color:var(--link);color:var(--ink);box-shadow:none}
+.template-card:hover,.settings-button:hover,.history-card:hover,.export-option:hover{background:color-mix(in srgb,var(--accent) 7%,var(--solid));border-color:var(--link)}
+.link-input,dialog input:not([type=checkbox]),dialog textarea,dialog select,.instructions,.question-input,#noteEditor,.prose pre,.prose code{background:var(--solid);border-color:var(--line);color:var(--ink);box-shadow:none}
+.link-input textarea{color:var(--ink)}
+input::placeholder,textarea::placeholder,.link-input textarea::placeholder,.instructions::placeholder,.question-input::placeholder,dialog input::placeholder,dialog textarea::placeholder{color:var(--muted);opacity:1}
+dialog,.model-popover{background:var(--solid);color:var(--ink);border-color:var(--line);color-scheme:inherit}
+dialog::backdrop{background:#14223566;backdrop-filter:blur(6px)}
+.brand-icon,.primary-button,.primary-button:hover{background:var(--accent);color:var(--accent-ink);border:1px solid transparent;box-shadow:none}
+.primary-button:hover{filter:brightness(1.06)}
+.primary-button:focus-visible{outline-color:var(--link)}
+.brand-icon{border-radius:13px}
+.brand-en,.model-menu summary,.topbar nav a,.field-label,.note-label strong,.note-tabs button,.attention summary,.template-card strong,dialog label,.note-footer,.provenance,.prose,.history-empty strong{color:var(--ink)}
+.text-button,.link-help button,.connection-note button,.prose a,.note-tabs button.active,.template-card.selected:after,.answer-panel a,.transcript-row a{color:var(--link)}
+.note-tabs button.active:after,.model-indicator.ready{background:var(--link)}
+.template-card.selected .template-icon,.template-icon,.processing-hint>span{color:var(--link)}
+.link-input svg,.empty-document svg{stroke:var(--muted)}
+.bili-badge,.badge,.history-card-top>span:first-child,.mastery-controls button,.section-next>span:last-child{border-color:var(--line)}
+.note-footer,.provenance,.note-tabs,.answer-panel,.provider-section{border-color:var(--line)}
+.note-footer,.provenance{background:var(--soft)}
+.prose blockquote,.answer-panel .evidence{border-left-color:var(--link)}
+.toast{background:var(--ink);color:var(--solid);border-color:var(--line)}
+.error-banner,.inline-result.error{color:var(--error);background:var(--soft)}
+::selection{background:var(--accent);color:var(--accent-ink)}
+input[type=checkbox],progress,input[type=range]{accent-color:var(--link)}
+.panel-heading h1,.history-heading h2{font-weight:650}
+.field-label,.note-label strong,.template-card strong,.note-empty h2{font-weight:600}
+.template-card small{font-size:calc(12px * var(--type-scale));line-height:1.6;text-wrap:pretty}
+.template-card{min-height:92px}
+.template-card strong{font-size:calc(14px * var(--type-scale))}
+.field-label,.note-tabs button,.link-input textarea{font-size:calc(14px * var(--type-scale))}
+.prose{font-size:calc(16px * var(--type-scale))}
+.note-empty p,.connection-note,.link-help,.processing-hint,.note-footer,.helper,.question-meta{font-size:calc(12px * var(--type-scale))}
+.note-empty h2{font-weight:650;color:var(--ink)}
+.note-empty p{color:var(--muted)}
+.note-panel .note-label strong{font-size:20px}
+.theme-toggle{white-space:nowrap}
+.model-area{gap:10px}
+.theme-presets{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 28px}
+.theme-preset{padding:7px 7px 12px;border:2px solid var(--line);border-radius:16px;background:var(--solid);color:var(--ink);font-size:14px}
+.theme-preset[aria-pressed=true]{border-color:var(--link);outline:2px solid color-mix(in srgb,var(--link) 16%,transparent);outline-offset:2px}
+.theme-swatch{background:var(--swatch);height:65px;display:flex;align-items:center;justify-content:center;gap:6px;border-radius:9px;margin-bottom:10px}
+.theme-swatch i:first-child{width:18px;height:30px;background:var(--swatch-accent);border-radius:5px}
+.theme-swatch i:last-child{width:37px;height:30px;background:#ffffffaa;border-radius:5px}
+.theme-custom{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+#themeDialog input[type=color]{width:100%;height:42px;padding:4px;cursor:pointer}
+#themeDialog input[type=range]{padding:0;margin:12px 0 22px;width:100%;border:0}
+#themeDialog output{float:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+#themeDialog .check-label{display:flex}
+#themeDialog input[type=checkbox]{margin:0}
+@media(max-width:1200px){.app-shell{padding:0 25px}.topbar{gap:12px}.topbar nav a{padding:9px 10px}.template-card small{font-size:12px}.template-card.study-template small{font-size:12px}.note-panel{height:760px}}
+@media(max-width:1050px){.topbar nav{display:none}.model-menu{display:block}.model-area{margin-left:auto}}
+@media(max-width:740px){.topbar{height:auto;min-height:110px;padding:18px 0;align-items:center;gap:12px}.model-area{flex-wrap:wrap;justify-content:flex-end;max-width:65%;gap:9px}.model-menu{order:3;flex-basis:100%}.model-menu summary{justify-content:flex-end}.model-menu #currentModel{max-width:200px}.model-popover{right:0}.app-shell{padding:0 16px}.template-card small,.template-card.study-template small{font-size:12px}.template-card.study-template>span:nth-child(2){display:block}.template-card.study-template small{margin-top:4px}.note-panel{height:700px}.theme-presets{gap:7px}.theme-preset{font-size:13px}.theme-swatch{height:48px}.theme-swatch i:last-child{width:23px}.theme-swatch i:first-child{width:13px}.theme-custom{gap:12px}}
+}
+
+/* A visible abstract backdrop, with reading surfaces kept opaque. */
+@media screen {
+.scene-image{
+ inset:-80px -40px;
+ background:
+  repeating-radial-gradient(ellipse at 105% 110%,transparent 0 52px,color-mix(in srgb,var(--accent) 16%,transparent) 53px 54px,transparent 55px 88px),
+  radial-gradient(ellipse at 8% 16%,color-mix(in srgb,var(--accent) 34%,var(--page)),transparent 53%),
+  radial-gradient(ellipse at 94% 70%,color-mix(in srgb,var(--accent) 24%,var(--page)),transparent 55%),
+  linear-gradient(135deg,var(--page) 15%,color-mix(in srgb,var(--accent) 8%,var(--page)) 52%,var(--page));
+ opacity:1;
+}
+.scene-image::before{
+ content:'';position:absolute;width:70vw;height:70vw;min-width:650px;min-height:650px;left:-32vw;top:12%;border-radius:50%;
+ border:1px solid color-mix(in srgb,var(--accent) 22%,transparent);
+ box-shadow:0 0 0 45px color-mix(in srgb,var(--accent) 4%,transparent),0 0 0 46px color-mix(in srgb,var(--accent) 13%,transparent),0 0 0 100px color-mix(in srgb,var(--accent) 3%,transparent),0 0 0 101px color-mix(in srgb,var(--accent) 10%,transparent);
+ transform:rotate(-25deg) scaleY(.7);
+}
+.scene-shade{
+ background:radial-gradient(ellipse at 60% -15%,#ffffff55,transparent 55%);
+ opacity:calc(var(--glow-opacity) * 5);
+}
+html[data-appearance=dark] .scene-shade{background:radial-gradient(ellipse at 60% -15%,color-mix(in srgb,var(--accent) 25%,transparent),transparent 55%)}
+}
+
+@media screen{.audio-mode{display:block}.audio-mode label{display:flex;align-items:center;gap:9px;color:var(--ink);font-size:14px;font-weight:600;cursor:pointer}.audio-mode input{width:17px;height:17px;margin:0;accent-color:var(--link)}.audio-mode small{display:block;margin:7px 0 0 26px;font-size:12px;color:var(--muted)}}

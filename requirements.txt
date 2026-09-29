@@ -1,0 +1,6 @@
+fastapi==0.115.12
+uvicorn==0.34.0
+httpx==0.28.1
+Pillow>=10.4,<12
+# Update this adapter when Bilibili changes its playback interface.
+yt-dlp==2026.8.19
